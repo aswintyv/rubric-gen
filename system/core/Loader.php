@@ -424,11 +424,16 @@ class CI_Loader {
 	*/
 	public function view_with_template($view, $vars = array(), $return = FALSE)
 	{
-		$op = null;
-		$op = $this->_ci_load(array('_ci_view' => 'header', '_ci_vars' => $this->_ci_object_to_array($vars), '_ci_return' => $return));
-		$op1 = $this->_ci_load(array('_ci_view' => $view, '_ci_vars' => $this->_ci_object_to_array($vars), '_ci_return' => $return));
-		$op = $this->_ci_load(array('_ci_view' => 'footer', '_ci_vars' => $this->_ci_object_to_array($vars), '_ci_return' => $return));
-
+		if(strstr($view, 'api_') === 0){
+			$op = null;
+			$op1 = $this->_ci_load(array('_ci_view' => $view, '_ci_vars' => $this->_ci_object_to_array($vars), '_ci_return' => $return));
+		}
+		else{
+			$op = null;
+			$op = $this->_ci_load(array('_ci_view' => 'header', '_ci_vars' => $this->_ci_object_to_array($vars), '_ci_return' => $return));
+			$op1 = $this->_ci_load(array('_ci_view' => $view, '_ci_vars' => $this->_ci_object_to_array($vars), '_ci_return' => $return));
+			$op = $this->_ci_load(array('_ci_view' => 'footer', '_ci_vars' => $this->_ci_object_to_array($vars), '_ci_return' => $return));
+		}
 		return $op1;
 	}
 
