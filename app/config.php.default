@@ -1,0 +1,7 @@
+<?php
+
+$app_url = "http://rubric.me";
+$mysql_host = "";
+$mysql_user = "";
+$mysql_pass = "";
+
