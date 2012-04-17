@@ -2,7 +2,10 @@
 
 </script>
 <div class="container">
-
+ <div class="alert alert-success" style="visibility: <?php if($msg == '') echo 'hidden'?>">
+  <a class="close" data-dismiss="alert">×</a>
+  <?php echo $msg ?>
+</div>
 </div>
 <div class="container">
 Add new words to the growin dictionary !!<br> Add one entry per line in the text area and click the submit button to add the words into the database ! <br />
@@ -16,7 +19,7 @@ Add new words to the growin dictionary !!<br> Add one entry per line in the text
 				<a href="#2" data-toggle="tab">Add Nouns - Objects</a>
 			</li>
 		  </ul>
-		  
+		 
 		  <div class="tab-content">
 			<div class="tab-pane active" id="1">
 			  <form id="f_adjectives" action = "<?php echo(site_url('/rubric/add_process'));?>" class="well form-horizontal" method="POST">

@@ -25,8 +25,12 @@ class rubric extends CI_Controller {
 //		$this->Adjectives->insert(array('value'=> 'hello'));
 	}
 	
-	public function add(){
-		$this->load->view_with_template('add');
+	public function add($switch = null){
+		$data['msg'] = '';
+		if($switch){
+			$data['msg'] = 'Your input has been saved....';
+		}
+		$this->load->view_with_template('add', $data);
 	}
 
 	public function add_process(){
