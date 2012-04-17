@@ -26,5 +26,16 @@ abstract class Base_model extends CI_Model {
     {
         $this->db->update($this->getTableName(), $value, $where);
     }
+    
+    function get_random($fields){
+    	$total = $this->count(array());
+    	$query = $this->db->select($fields)->get_where($this->getTableName(), array(), 1, rand(0, $total-1) );
+    	return $query->result();
+    }
+    
+    function get($fields, $where ){
+    	$query = $this->db->select($fields)->get_where($this->getTableName(), $where);
+    	return $query->result();
+    }
 
 }

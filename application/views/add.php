@@ -16,7 +16,7 @@ Add new words to the growin dictionary !!<br> Add one entry per line in the text
 				<a href="#1" data-toggle="tab">Add Adjectives</a>
 			</li>
 			<li>
-				<a href="#2" data-toggle="tab">Add Nouns - Objects</a>
+				<a href="#2" data-toggle="tab">Add Nouns</a>
 			</li>
 		  </ul>
 		 

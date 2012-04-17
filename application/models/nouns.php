@@ -1,5 +1,5 @@
 <?php
-include 'base_model.php';
+require_once 'base_model.php';
 class Nouns extends Base_model {
 	
 	function __construct()
