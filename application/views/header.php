@@ -40,9 +40,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">Rubric.me !</a>
-          <div class="nav-collapse">
-            
+          <a class="brand" href="<?php echo(site_url('/rubric/'));?>">Rubric.me !</a>
+         <div class="nav-collapse">
+            <ul class="nav">
+              <li class=""><a href="<?php echo(site_url('/rubric/'));?>">Home</a></li>
+              <li><a href="<?php echo(site_url('/rubric/add'));?>">Add</a></li>
+            </ul>
           </div><!--/.nav-collapse -->
         </div>
       </div>
