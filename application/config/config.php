@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/rubric-gen/';
+$config['base_url']	= 'http://10.158.239.162/rubric-gen/';
 
 /*
 |--------------------------------------------------------------------------
