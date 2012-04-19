@@ -24,14 +24,16 @@ class api_data extends CI_Controller {
 		$adjective = $this->Adjectives->get_random(array('id', 'value'));
 
 		$this->load->model('Nouns');
-		$noun = $this->Nouns->get_random(array('id', 'value'));
+		$noun1 = $this->Nouns->get_random(array('id', 'value'));
+		$noun2 = $this->Nouns->get_random(array('id', 'value'));
 		
 		$data = array();
-		$data['value'] = $adjective[0]->value .' '.$noun[0]->value;
+		$data['value'] = $adjective[0]->value .' '.$noun1[0]->value . ' '.$noun2[0]->value;
 		$data['split_value'] = array();
 		$data['split_value']['adjective'] = $adjective;
-		$data['split_value']['noun'] = $noun;
-		
+		$data['split_value']['noun1'] = $noun1;
+		$data['split_value']['noun2'] = $noun2;
+	
 		print_r(json_encode($data));
 	}	
 }
