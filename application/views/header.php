@@ -36,6 +36,10 @@
       		z-index: 1;
     	  	position: relative
       		top:0px;
+      		width: 300px;
+      		height: 150px;
+      		overflow-x: hidden;
+      		overflow-y: hidden;
       }
     </style>
     <link href="<?php echo(base_url())?>/assets/css/bootstrap-responsive.css" rel="stylesheet">

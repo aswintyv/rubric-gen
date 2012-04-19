@@ -31,7 +31,15 @@ function processImages(data){
 	var images = data['responseData']['results'];
 	console.log(images);
 	for(var i = 0; i< images.length; i++){
-	 $('#imgtile').append('<div class="bgimg"> <img src="'+images[i]['url']+'" width="300px"/></div>')
+		var img = images[i];
+		var imgObj = new Image();
+		imgObj.src = img['url'];
+		imgObj.onerror = function(){
+		//alert('adasdas');
+			var rand = Math.floor((Math.random()*8)+1);
+			img = images[rand];
+		};
+		$('#imgtile').append('<div class="bgimg"> <img src="'+img['url']+'" width="300" height="'+(img['width']/300) * img['height']+'"/></div>')
 	}
 	
 }
