@@ -13,6 +13,30 @@
       body {
         padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
       }
+      .bgdiv{
+      	height: 300px;
+      	overflow-y: hidden;
+      	overflow-x: hidden;
+      }
+   
+      .maintext{
+  		 z-index: 10;
+   		position: absolute;
+   		margin-top: 100px;
+   		margin-left: 0px;
+   		color: #FFFFFF;
+   		background-color: #000000;
+   		opacity: 0.8;
+   		padding-top: 5px;
+   		padding-bottom: 5px;
+   		
+      }
+      .bgimg{
+      		float:left;
+      		z-index: 1;
+    	  	position: relative
+      		top:0px;
+      }
     </style>
     <link href="<?php echo(base_url())?>/assets/css/bootstrap-responsive.css" rel="stylesheet">
 
@@ -27,7 +51,6 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo(base_url())?>/assets/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="<?php echo(base_url())?>/assets/ico/apple-touch-icon-57-precomposed.png">
       <script src="<?php echo(base_url())?>/assets/js/jquery.js"></script>
-
   </head>
 
   <body>

@@ -14,6 +14,8 @@
     <script src="<?php echo(base_url())?>/assets/js/bootstrap-collapse.js"></script>
     <script src="<?php echo(base_url())?>/assets/js/bootstrap-carousel.js"></script>
     <script src="<?php echo(base_url())?>/assets/js/bootstrap-typeahead.js"></script>
-
+	<div class="container" style="text-align: center">
+		<a href="http://aswinteja.com" >http://aswinteja.com</a>	
+	</div>
   </body>
 </html>
