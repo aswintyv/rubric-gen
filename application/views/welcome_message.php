@@ -44,3 +44,5 @@ function processImages(data){
 	
 }
 </script>
+
+<div class="content" style="text-align: center">Get a rubric in JSON from: <a href="<?php echo(site_url('/api_data/'));?>"><?php echo(site_url('/api_data/'));?></a> </div>
