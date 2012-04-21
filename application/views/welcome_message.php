@@ -1,12 +1,3 @@
-
-    <div class="container">
-		<div class="hero-unit bgdiv" style="padding-top:5px; padding-left:5px; padding-right: 5px; padding-bottom:5px">
-				<div class="maintext"><h1><span id="rub"></span></h1></div> 
-		<div id="imgtile" style="width:1200px">
-		</div>
-		</div>
-    </div> <!-- /container -->
-
 <script>
 $(document).ready(function() {
 function loadImages(text){
@@ -20,6 +11,8 @@ $.ajax({
 	  url: '<?php echo(site_url("/api_data/"));?>',
 	  success: function(data) {
     		$('#rub').html(data['value']);
+    		$('#rubrik').html(data['value']);
+
     		loadImages(data['value']);
   		},
 	  dataType: 'JSON'
@@ -44,5 +37,21 @@ function processImages(data){
 	
 }
 </script>
+
+    
+    <div class="container lead" style="text-align: center">
+		Yo Dawg ! I hear you like Rubrics - So we created one right here. <br />
+		Name your project, name your group, name your car - or just name your kid "<span id="rubrik"> </span>".
+	</div>
+
+    <div class="container">
+		<div class="hero-unit bgdiv" style="padding-top:5px; padding-left:5px; padding-right: 5px; padding-bottom:5px">
+				<div class="maintext"><h1><span id="rub"></span></h1></div> 
+		<div id="imgtile" style="width:1200px">
+		</div>
+		</div>
+    </div> <!-- /container -->
+
+
 
 <div class="content" style="text-align: center">Get a rubric in JSON from: <a href="<?php echo(site_url('/api_data/'));?>"><?php echo(site_url('/api_data/'));?></a> </div>
