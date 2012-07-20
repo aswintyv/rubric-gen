@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# rubricme: http://ogp.me/ns/fb/rubricme#">
     <meta charset="utf-8">
     <title>Rubric.Me</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,6 +42,7 @@
       		overflow-y: hidden;
       }
     </style>
+    <?php $data =  file_get_contents(site_url("/api_data/"));?>
     <link href="<?php echo(base_url())?>/assets/css/bootstrap-responsive.css" rel="stylesheet">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -55,6 +56,18 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo(base_url())?>/assets/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="<?php echo(base_url())?>/assets/ico/apple-touch-icon-57-precomposed.png">
       <script src="<?php echo(base_url())?>/assets/js/jquery.js"></script>
+      	<script type="text/javascript">
+	var data = <?php print_r($data);?>
+		
+
+	</script>
+  <meta property="fb:app_id" content="314513431971709" /> 
+  <meta property="og:type"   content="rubricme:rubric" /> 
+  <meta property="og:url"    content="http://rubric.me" /> 
+  <meta property="og:title"  content="<?php $val  = json_decode($data); echo($val->value);?>" /> 
+  <meta property="og:image"  content="https://s-static.ak.fbcdn.net/images/devsite/attachment_blank.png" /> 
+
+      
   </head>
 
   <body>

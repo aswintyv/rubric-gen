@@ -34,7 +34,10 @@ class api_data extends CI_Controller {
 		$data['split_value']['noun1'] = $noun1;
 		$data['split_value']['noun2'] = $noun2;
 	
-		print_r(json_encode($data));
+	$this->output
+    ->set_content_type('application/json')
+    ->set_output(json_encode($data));
+		//print_r(json_encode($data));
 	}	
 }
 

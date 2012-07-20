@@ -7,16 +7,11 @@ $.ajax({
 	  });
 
 }
-	$.ajax({
-	  url: '<?php echo(site_url("/api_data/"));?>',
-	  success: function(data) {
-    		$('#rub').html(data['value']);
+   		$('#rub').html(data['value']);
     		$('#rubrik').html(data['value']);
 
     		loadImages(data['value']);
-  		},
-	  dataType: 'JSON'
-	  });
+
 });
 
 function processImages(data){
