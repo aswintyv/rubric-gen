@@ -63,7 +63,7 @@
 	</script>
   <meta property="fb:app_id" content="314513431971709" /> 
   <meta property="og:type"   content="rubricme:rubric" /> 
-  <meta property="og:url"    content="http://rubric.me?funval=<?php echo($_GET['funval']);?>" /> 
+  <meta property="og:url"    content="http://rubric.me?funval=<?php $val  = json_decode($data); echo($val->value);?>" /> 
   <meta property="og:title"  content="<?php $val  = json_decode($data); echo($val->value);?>" /> 
   <meta property="og:image"  content="https://s-static.ak.fbcdn.net/images/devsite/attachment_blank.png" /> 
 
