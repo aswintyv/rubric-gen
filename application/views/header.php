@@ -92,7 +92,7 @@
         });
 
 		$(document).ready(function(){
-		 	$('#welcome_msg').html('To connect using Facebook, please click  <a href="#" id="auth-loginlink"  onClick="FB.login(function(response) {}, {scope: "publish_actions"});">Here</a>');
+		 	$('#welcome_msg').html('To connect using Facebook, please click  <a href="#" id="auth-loginlink"  onClick="FB.login(function(response){}, {scope: \'publish_actions\'});">Here</a>');
 		});
         FB.Event.subscribe('auth.statusChange', function(response) {
           if (response.authResponse) {
@@ -104,7 +104,7 @@
               }
             })
           } else {
-            $('#welcome_msg').html('To connect using Facebook, please click  <a href="#" id="auth-loginlink" onClick="FB.login(function(response) {}, {scope: "publish_actions"});">Here</a>');
+            $('#welcome_msg').html('To connect using Facebook, please click  <a href="#" id="auth-loginlink" onClick="FB.login(function(response){},{scope: \'publish_actions\'})">Here</a>');
           }
         });
 
