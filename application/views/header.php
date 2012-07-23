@@ -65,7 +65,7 @@
   <meta property="og:type"   content="rubricme:rubric" /> 
   <meta property="og:url"    content="http://rubric.me?funval=<?php $val  = json_decode($data); echo($val->value);?>" /> 
   <meta property="og:title"  content="<?php $val  = json_decode($data); echo($val->value);?>" /> 
-  <meta property="og:image"  content="https://s-static.ak.fbcdn.net/images/devsite/attachment_blank.png" /> 
+  <meta property="og:image"  content="http://images.clipartof.com/small/1095745-Clipart-Rocker-Dude-Smiley-Emoticon-With-A-Star-Holding-Up-Fingers-And-Sticking-Out-A-Tongue-Royalty-Free-Vector-Illustration.jpg" /> 
 
       
   </head>
@@ -115,16 +115,6 @@
     </script>
     
     <div id="welcome_msg" class="alert alert-error"></div>
-    
-      <div id="auth-status">
-        <div id="auth-loggedout">
-          <a href="#" id="auth-loginlink">Login</a>
-        </div>
-        <div id="auth-loggedin" style="display:none">
-          Hi, <span id="auth-displayname"></span>  
-        (<a href="#" id="auth-logoutlink">logout</a>)
-      </div>
-    </div>
     
 
     <div class="navbar navbar-fixed-top">
