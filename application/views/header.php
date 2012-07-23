@@ -118,7 +118,7 @@
       FB.api(
         '/me/rubricme:generate',
         'post',
-        { recipe: 'http://rubric.me?funval='+data['value'] },
+        { rubric: 'http://rubric.me?funval='+data['value'] },
         function(response) {
            if (!response || response.error) {
            	console.log(response);
