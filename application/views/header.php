@@ -120,6 +120,7 @@
         { rubric: 'http://rubric.me?funval='+data['value'] },
         function(response) {
            if (!response || response.error) {
+           console.log(response);
               alert('Yikes ! Something went wrong when publishing to facebook.');
            } else {
               $("#welcome_msg").html($("#welcome_msg").html() + '<br /> Cook was successful! Action ID: ' + response.id);
