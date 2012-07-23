@@ -100,6 +100,7 @@
               if (me.name) {
               
                 $('#welcome_msg').html('Welcome '+me.name+' !');
+                postGeneratedRubric();
               }
             })
           } else {
@@ -111,6 +112,21 @@
       
       };
     
+    
+  function postGeneratedRubric()
+  {
+      FB.api(
+        '/me/rubricme:generate',
+        'post',
+        { recipe: 'http://rubric.me?funval='+data['value'] },
+        function(response) {
+           if (!response || response.error) {
+              alert('Yikes ! Something went wrong when publishing to facebook.');
+           } else {
+              $("#welcome_msg").html($("#welcome_msg").html() + '<br /> Cook was successful! Action ID: ' + response.id);
+           }
+        });
+  }
       
     </script>
     
