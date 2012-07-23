@@ -123,7 +123,7 @@
            console.log(response);
               alert('Yikes ! Something went wrong when publishing to facebook.');
            } else {
-              $("#welcome_msg").html($("#welcome_msg").html() + '<br /> Cook was successful! Action ID: ' + response.id);
+              $("#welcome_msg").html($("#welcome_msg").html() + '<br /> Rubric publish was successful! Action ID: ' + response.id);
            }
         });
   }
