@@ -42,7 +42,7 @@
       		overflow-y: hidden;
       }
     </style>
-    <?php $data =  file_get_contents(site_url("/api_data/"));?>
+    <?php $data =  (!isset($_GET['funval']))? file_get_contents(site_url("/api_data/")) : json_encode(array('value'=>$_GET['funval']));?>
     <link href="<?php echo(base_url())?>/assets/css/bootstrap-responsive.css" rel="stylesheet">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -63,7 +63,7 @@
 	</script>
   <meta property="fb:app_id" content="314513431971709" /> 
   <meta property="og:type"   content="rubricme:rubric" /> 
-  <meta property="og:url"    content="http://rubric.me" /> 
+  <meta property="og:url"    content="http://rubric.me?funval=<?php echo($_GET['funval']);?>" /> 
   <meta property="og:title"  content="<?php $val  = json_decode($data); echo($val->value);?>" /> 
   <meta property="og:image"  content="https://s-static.ak.fbcdn.net/images/devsite/attachment_blank.png" /> 
 
@@ -71,6 +71,61 @@
   </head>
 
   <body>
+  
+     <script>
+    
+		/** Copy paste from Facebook doc - shit i'm a cheap ass :P **/
+     (function(d){
+         var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement('script'); js.id = id; js.async = true;
+         js.src = "//connect.facebook.net/en_US/all.js";
+         ref.parentNode.insertBefore(js, ref);
+       }(document));
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '314513431971709', 
+          channelUrl : 'http://rubric.me/channel.html', // Path to your Channel File
+          status     : true, // check login status
+          cookie     : true, // enable cookies to allow the server to access the session
+          xfbml      : true  // parse XFBML
+        });
+
+		$(document).ready(function(){
+		 	$('#welcome_msg').html('To connect using Facebook, please click  <a href="#" id="auth-loginlink" onClick="FB.login();">Here</a>');
+		});
+        FB.Event.subscribe('auth.statusChange', function(response) {
+          if (response.authResponse) {
+            FB.api('/me', function(me){
+              if (me.name) {
+              
+                $('#welcome_msg').html('Welcome '+me.name+' !');
+              }
+            })
+          } else {
+          alert('adasdas');
+            $('#welcome_msg').html('To connect using Facebook, please click  <a href="#" id="auth-loginlink" onClick="FB.login();">Here</a>');
+          }
+        });
+
+      
+      };
+    
+      
+    </script>
+    
+    <div id="welcome_msg" class="alert alert-error"></div>
+    
+      <div id="auth-status">
+        <div id="auth-loggedout">
+          <a href="#" id="auth-loginlink">Login</a>
+        </div>
+        <div id="auth-loggedin" style="display:none">
+          Hi, <span id="auth-displayname"></span>  
+        (<a href="#" id="auth-logoutlink">logout</a>)
+      </div>
+    </div>
+    
 
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
