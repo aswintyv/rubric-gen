@@ -21,16 +21,16 @@ class api_data extends CI_Controller {
 	public function index()
 	{
 		$this->load->model('Adjectives');
-		$adjective = $this->Adjectives->get_random(array('id', 'value'));
+		//$adjective = $this->Adjectives->get_random(array('id', 'value'));
 
 		$this->load->model('Nouns');
 		$noun1 = $this->Nouns->get_random(array('id', 'value'));
 		$noun2 = $this->Nouns->get_random(array('id', 'value'));
 		
 		$data = array();
-		$data['value'] = $adjective[0]->value .' '.$noun1[0]->value . ' '.$noun2[0]->value;
+		$data['value'] = $noun1[0]->value . ' '.$noun2[0]->value;
 		$data['split_value'] = array();
-		$data['split_value']['adjective'] = $adjective;
+		//$data['split_value']['adjective'] = $adjective;
 		$data['split_value']['noun1'] = $noun1;
 		$data['split_value']['noun2'] = $noun2;
 	
